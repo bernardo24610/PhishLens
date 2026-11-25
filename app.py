@@ -26,9 +26,6 @@ BASE_DIR = Path("/mount/src/phishlens")
 URL_MODEL_PATH = BASE_DIR / "phishing_model.pkl"
 EMAIL_MODEL_PATH = BASE_DIR / "email_model.pkl"
 
-st.write("Project Path:", str(BASE_DIR))
-st.write("URL Model Exists:", URL_MODEL_PATH.exists())
-st.write("Email Model Exists:", EMAIL_MODEL_PATH.exists())
 for file in BASE_DIR.rglob("*.pkl"):
     st.write(str(file))
 
