@@ -36,7 +36,7 @@ for file in BASE_DIR.rglob("*.pkl"):
 
 @st.cache_resource
 def load_models():
-  
+  print("HELOO")
 
 try:
     url_model, email_model = load_models()
