@@ -27,6 +27,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 URL_MODEL_PATH = BASE_DIR / "phishing_model.pkl"
 EMAIL_MODEL_PATH = BASE_DIR / "email_model.pkl"
 
+st.write("Project Path:", str(BASE_DIR))
+st.write("URL Model Exists:", URL_MODEL_PATH.exists())
+st.write("Email Model Exists:", EMAIL_MODEL_PATH.exists())
+
 
 # ==========================================
 # LOAD MODELS
@@ -34,21 +38,17 @@ EMAIL_MODEL_PATH = BASE_DIR / "email_model.pkl"
 
 @st.cache_resource
 def load_models():
-
     url_model = joblib.load(URL_MODEL_PATH)
     email_model = joblib.load(EMAIL_MODEL_PATH)
-
     return url_model, email_model
-
 
 try:
     url_model, email_model = load_models()
+    st.success("Both AI Models Loaded Successfully!")
 
 except Exception as e:
-
     url_model = None
     email_model = None
-
     st.error(f"Model Loading Error: {e}")
 
 
