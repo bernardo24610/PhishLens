@@ -36,9 +36,7 @@ for file in BASE_DIR.rglob("*.pkl"):
 
 @st.cache_resource
 def load_models():
-    url_model = joblib.load(URL_MODEL_PATH)
-    email_model = joblib.load(EMAIL_MODEL_PATH)
-    return url_model, email_model
+  
 
 try:
     url_model, email_model = load_models()
