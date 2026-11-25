@@ -22,8 +22,7 @@ st.set_page_config(
 # FILE PATHS
 # ==========================================
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-
+BASE_DIR = Path("/mount/src/phishlens")
 URL_MODEL_PATH = BASE_DIR / "phishing_model.pkl"
 EMAIL_MODEL_PATH = BASE_DIR / "email_model.pkl"
 
